@@ -302,12 +302,12 @@ void parseCommand(String json) {
 **Transmission Workflow**
 ```mermaid
 graph LR
-A[ESP32-CAM] -->|1. Capture Image| B[SD Card]
-B -->|2. Base64 Encode| C[JSON Package]
-C -->|3a. HTTP POST| D[Python Server]
-C -->|3b. MQTT Publish| E[MQTT Broker]
-D -->|4. Decode| F[Save Image]
-E -->|5. Forward| D
+A[ESP32-CAM] -->|Capture Image| B[SD Card]
+B -->|Base64 Encode| C[JSON Package]
+C -->|a. HTTP POST| D[Python Server]
+C -->|b. MQTT Publish| E[MQTT Broker]
+D -->|Decode| F[Save Image]
+E -->|Forward| D
 ```
 
 **ESP32 Sender:**
